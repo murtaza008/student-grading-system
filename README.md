@@ -40,7 +40,7 @@ npm run dev
 
 ## 🔐 Demo Credentials
 
-For testing purposes, use the following credentials:
+For testing purposes, use the following credentials (also shown as hints on the login page):
 
 - **Email**: murtaza@gmail.com
 - **Password**: Murtaza123
