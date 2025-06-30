@@ -1,0 +1,329 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: var(--spacing-4);
+}
+
+.modal {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid #e2e8f0;
+    background: #f8fafc;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.titleSection {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.headerIcon {
+    font-size: 1.5rem;
+    color: #475569;
+}
+
+.titleSection h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0;
+}
+
+.close {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    border: none;
+    background: var(--white);
+    color: #64748b;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.close:hover {
+    background: #ef4444;
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+.form {
+    padding: var(--spacing-lg);
+}
+
+.formSection {
+    margin-bottom: var(--spacing-lg);
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.input {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid #d1d5db;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    background-color: var(--white);
+    color: #374151;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #64748b;
+    box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.1);
+}
+
+.input::placeholder {
+    color: #9ca3af;
+}
+
+.sectionTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 var(--spacing-md) 0;
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.studentsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    max-height: 400px;
+    overflow-y: auto;
+    padding: var(--spacing-sm);
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-md);
+    background: #f8fafc;
+}
+
+.studentCard {
+    background: var(--white);
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.studentCard:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.studentInfo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex: 1;
+}
+
+.studentIcon {
+    font-size: 1rem;
+    color: #64748b;
+}
+
+.studentName {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 0.875rem;
+    margin-bottom: 2px;
+}
+
+.studentRoll {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-family: 'Courier New', monospace;
+}
+
+.markInput {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.markInput input {
+    width: 60px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid #d1d5db;
+    border-radius: var(--radius-sm);
+    text-align: center;
+    font-size: 0.875rem;
+    background: var(--white);
+}
+
+.markInput input:focus {
+    outline: none;
+    border-color: #64748b;
+    box-shadow: 0 0 0 2px rgba(100, 116, 139, 0.1);
+}
+
+.markSeparator {
+    color: #64748b;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.totalMarks {
+    color: #64748b;
+    font-weight: 600;
+    font-size: 0.875rem;
+    min-width: 20px;
+    text-align: center;
+}
+
+.actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: flex-end;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid #e2e8f0;
+}
+
+.submitButton {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: linear-gradient(135deg, #475569 0%, #64748b 100%);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    min-height: 40px;
+}
+
+.submitButton:hover:not(:disabled) {
+    background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(71, 85, 105, 0.2);
+}
+
+.submitButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.cancelButton {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: #f1f5f9;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 40px;
+}
+
+.cancelButton:hover {
+    background: #e2e8f0;
+    color: #475569;
+}
+
+@media (max-width: 768px) {
+    .overlay {
+        padding: var(--spacing-2);
+    }
+
+    .modal {
+        max-height: 95vh;
+        max-width: 95vw;
+    }
+
+    .header {
+        padding: var(--spacing-md);
+    }
+
+    .form {
+        padding: var(--spacing-md);
+    }
+
+    .formRow {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .studentsGrid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .studentCard {
+        padding: var(--spacing-sm);
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .submitButton,
+    .cancelButton {
+        width: 100%;
+        justify-content: center;
+    }
+}

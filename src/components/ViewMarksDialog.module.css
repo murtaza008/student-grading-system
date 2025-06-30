@@ -1,0 +1,212 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: var(--spacing-4);
+}
+
+.modal {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid #e2e8f0;
+    background: #f8fafc;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.titleSection {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.studentIcon {
+    font-size: 1.5rem;
+    color: #475569;
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 var(--spacing-xs) 0;
+}
+
+.subtitle {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin: 0;
+}
+
+.close {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    border: none;
+    background: var(--white);
+    color: #64748b;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.close:hover {
+    background: #ef4444;
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+.body {
+    padding: var(--spacing-lg);
+}
+
+.emptyState {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: #64748b;
+}
+
+.emptyIcon {
+    font-size: 3rem;
+    color: #cbd5e1;
+    margin-bottom: var(--spacing-md);
+}
+
+.marksContainer {
+    margin-top: var(--spacing-md);
+}
+
+.sectionTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 var(--spacing-md) 0;
+}
+
+.marksGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.markCard {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.markCard:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+}
+
+.markType {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: var(--spacing-sm);
+    text-transform: capitalize;
+}
+
+.markValue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+}
+
+.obtained {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.separator {
+    font-size: 1rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.total {
+    font-size: 1.25rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.percentage {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #059669;
+    background: #d1fae5;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .overlay {
+        padding: var(--spacing-2);
+    }
+
+    .modal {
+        max-height: 95vh;
+        max-width: 95vw;
+    }
+
+    .header {
+        padding: var(--spacing-md);
+    }
+
+    .body {
+        padding: var(--spacing-md);
+    }
+
+    .marksGrid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .markCard {
+        padding: var(--spacing-sm);
+    }
+}
